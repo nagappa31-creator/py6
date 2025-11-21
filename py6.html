@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <!-- Combined CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #0084ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        form input, form textarea {
+            width: 300px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hi! I'm a developer passionate about web development.</p>
+    </header>
+
+    <section class="card">
+        <h2>About Me</h2>
+        <p>I am a student/developer interested in Python, Flask, and full stack development.</p>
+    </section>
+
+    <section class="card">
+        <h2>Projects</h2>
+        <ul style="text-align:left;">
+            <li>✔ Flask Web Apps</li>
+            <li>✔ IoT Mini Projects</li>
+            <li>✔ Data Analysis Scripts</li>
+        </ul>
+    </section>
+
+    <a href="#contactSection" class="btn">Contact Me</a>
+
+    <hr>
+
+    <!-- Contact Form -->
+    <section id="contactSection" class="card">
+        <h2>Contact Me</h2>
+
+        <p id="successMessage" class="success"></p>
+
+        <form onsubmit="return submitForm()">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" placeholder="Your Email" required><br>
+            <textarea id="message" placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Combined JavaScript -->
+    <script>
+        function submitForm() {
+            let name = document.getElementById("name").value;
+            let successMsg = document.getElementById("successMessage");
+
+            successMsg.innerHTML = "Thanks " + name + "! Your message has been received.";
+
+            // Prevent page reload
+            return false;
+        }
+    </script>
+
+</body>
+</html>
